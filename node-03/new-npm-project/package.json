@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "AG",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "nodemailer": "^6.6.0",
+    "slugify": "^1.5.3"
+  }
 }
