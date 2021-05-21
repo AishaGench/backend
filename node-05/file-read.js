@@ -6,3 +6,4 @@ fs.readFile('demo.txt',(error,data)=>{
     }
     console.log(data.toString())
 })
+console.log("File read ends....")
