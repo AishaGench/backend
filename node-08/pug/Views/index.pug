@@ -21,5 +21,12 @@ html
       | The number is ten ....
     else 
       | The number is not ten ...
+    
+    hr
+    ul
+      each val, index in ['A', 'B', 'C', 'D', 'E', 'F']
+        li= val + ' ' + index
+
+        
     include footer.pug
         
