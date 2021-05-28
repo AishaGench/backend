@@ -13,6 +13,13 @@ html
     h3 Job Description = #{jobDesc.toLowerCase()}
     br
     hr
-
+    - var number = 20
+    //- if !number  = unless number
+    if !number
+      |Number doesn't exist...
+    else if number === 10
+      | The number is ten ....
+    else 
+      | The number is not ten ...
     include footer.pug
         
