@@ -22,5 +22,9 @@ app.get('/about',(request,response) =>response.send('HELLO ABOUT PAGE from GET r
 app.post('/about',(request,response) =>response.send('HELLO ABOUT PAGE from POST request'))
 app.put('/about',(request,response) =>response.send('HELLO ABOUT PAGE from PUT request'))
 app.delete('/about',(request,response) =>response.send('HELLO ABOUT PAGE from DELETE request'))
+app.all('/about',(request,response) =>response.send('HELLO ABOUT PAGE from ALL request'))
+//if we put all request at the top another request doesnt work 
+
+
 
 app.listen(port, () => console.log(`Example app listening on port port!`))
