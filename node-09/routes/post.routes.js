@@ -57,5 +57,11 @@ router.get('/findOne', (req, res) => {
   .catch((err)=>{res.json(err)})
 })
 
-
+// FindById()---> According to an ID, it will return that result
+router.get('/findById', (req, res) => {
+    PostModel.findById('60c00cc7765db72da44eba4b')
+    .then((resultData)=>{res.json(resultData)})
+    .catch((err)=>{res.json(err)})
+  })
+  
 module.exports = router
