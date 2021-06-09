@@ -90,6 +90,11 @@ router.post('/addAll', function (req, res) {
     })
   })
 
+// Update()
+router.put('/updateMany',(req, res)=>{
+    PostModel.updateMany({isActive:false},{title:'Title has been updated....'})
+    .then((data)=>{res.json(data)})
+    .catch((error)=>{res.json(error)})
+  })
 
-  
 module.exports = router
