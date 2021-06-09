@@ -64,4 +64,20 @@ router.get('/findById', (req, res) => {
     .catch((err)=>{res.json(err)})
   })
   
+  // Get the data from user request
+router.post('/add', function (req, res) {
+    const myPostModel = new PostModel({
+      title: req.body.title,
+      subTitle: req.body.subTitle,
+      //createdDate: Date.now(),
+      isActive: req.body.isActive,
+      meta:req.body.meta,
+      comments: req.body.comments
+  
+    })
+    myPostModel.save((error, data)=>{
+      if(error) res.json(error)
+      res.json(data)
+    })
+  })
 module.exports = router
