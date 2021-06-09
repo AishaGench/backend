@@ -80,4 +80,16 @@ router.post('/add', function (req, res) {
       res.json(data)
     })
   })
+
+  // Get the data from user request 2
+router.post('/addAll', function (req, res) {
+    const myPostModel = new PostModel( r)
+    myPostModel.save((error, data)=>{
+      if(error) res.json(error)
+      res.json(data)
+    })
+  })
+
+
+  
 module.exports = router
