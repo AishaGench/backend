@@ -104,5 +104,11 @@ router.put('/updateOne',(req, res)=>{
   .catch((error)=>{res.json(error)})
 })
 
+// FindByIdAndUpdate()
+router.put('/findByIdAndUpdate', (req, res)=>{
+  PostModel.findByIdAndUpdate('60c02cd48620cd314ccadef6',{title:'Ttitle has been updated with findByIdAndUpdate', isActive: true})
+  .then((data)=>{res.json(data)})
+  .catch((error)=>{res.json(error)})
+})
 
 module.exports = router
