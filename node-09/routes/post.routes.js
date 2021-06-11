@@ -118,4 +118,10 @@ router.delete('/deleteMany',(req,res)=>{
   .catch((error)=>{res.json(error)}) 
 })
 
+// DeleteOne()
+router.delete('/deleteOne',(req,res)=>{
+  PostModel.deleteOne({title:"My New Ttitle"})
+  .then((data)=>{res.json(data)})
+  .catch((error)=>{res.json(error)}) 
+})
 module.exports = router
