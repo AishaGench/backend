@@ -138,4 +138,11 @@ router.delete('/findByIdAndRemove',(req,res)=>{
   .then((data)=>{res.json(data)})
   .catch((error)=>{res.json(error)}) 
 })
+// Update from request body
+router.put('/updateOneFromBody', (req, res)=>{
+  PostModel.updateOne({isActive:false},{title:req.body.title, isActive: req.body.isActive})
+  .then((data)=>{res.json(data)})
+  .catch((error)=>{res.json(error)})
+})
+
 module.exports = router
