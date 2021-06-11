@@ -97,4 +97,12 @@ router.put('/updateMany',(req, res)=>{
     .catch((error)=>{res.json(error)})
   })
 
+//UpdateOne()
+router.put('/updateOne',(req, res)=>{
+  PostModel.updateOne({isActive:false},{title:'Title has been updated with UPDATEONE()....'})
+  .then((data)=>{res.json(data)})
+  .catch((error)=>{res.json(error)})
+})
+
+
 module.exports = router
