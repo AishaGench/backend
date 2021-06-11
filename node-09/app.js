@@ -8,19 +8,21 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var newsRouter = require('./routes/news');
 var postsRouter = require('./routes/post.routes');
+var authorsRouter = require('./routes/author.routes');
 
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/local', {
   useNewUrlParser: true, 
-  useUnifiedTopology: true})
-  /*
-  .then(()=>{console.log('MongoDB connection was successful...');})
-  .catch(()=>{console.log('MongoDB connection was failed. Details:', error)});
+  useUnifiedTopology: true
+})
+/*
+.then(()=>{console.log('MongoDB connection was successful...')})
+.catch((error)=>{console.log('MongoDB connection was failed. Details: ', error)})
 */
-mongoose.connection.on('open', ()=>{console.log('MongoDB connection was successful...')})
-mongoose.connection.on('error',(err)=>{console.log('MongoDB connection was failed. Details:', err)})
-
+mongoose.connection.on('open',()=>{console.log('MongoDB connection was successful...')})
+mongoose.connection.on('error',(err)=>{console.log('MongoDB connection was failed. Details: ', err)} )
 var app = express();
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -35,7 +37,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/news', newsRouter);
 app.use('/posts', postsRouter);
-
+app.use('/authors', authorsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
