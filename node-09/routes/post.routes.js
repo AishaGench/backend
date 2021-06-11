@@ -145,4 +145,13 @@ router.put('/updateOneFromBody', (req, res)=>{
   .catch((error)=>{res.json(error)})
 })
 
+//sort - limit --skip
+//1, asc, ascending --> for sorting
+//1, desc, descending --> for sorting
+router.get('/sorting', (req, res)=>{
+  PostModel.find()
+  .sort({'meta.votes':'asc', 'subTitle':-1})
+  .then((data)=>{res.json(data)})
+  .catch((error)=>{res.json(error)})
+})
 module.exports = router
