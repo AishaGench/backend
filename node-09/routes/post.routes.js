@@ -111,4 +111,11 @@ router.put('/findByIdAndUpdate', (req, res)=>{
   .catch((error)=>{res.json(error)})
 })
 
+// Delete()
+router.delete('/deleteMany',(req,res)=>{
+  PostModel.deleteMany({isActive:false})
+  .then((data)=>{res.json(data)})
+  .catch((error)=>{res.json(error)}) 
+})
+
 module.exports = router
