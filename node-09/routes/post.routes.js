@@ -151,6 +151,8 @@ router.put('/updateOneFromBody', (req, res)=>{
 router.get('/sorting', (req, res)=>{
   PostModel.find()
   .sort({'meta.votes':'asc', 'subTitle':-1})
+  .limit(2)
+  .skip(1)
   .then((data)=>{res.json(data)})
   .catch((error)=>{res.json(error)})
 })
