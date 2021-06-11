@@ -124,4 +124,11 @@ router.delete('/deleteOne',(req,res)=>{
   .then((data)=>{res.json(data)})
   .catch((error)=>{res.json(error)}) 
 })
+
+//FindByIdAndDelete
+router.delete('/findByIdAndDelete',(req,res)=>{
+  PostModel.findByIdAndDelete('60bee03579edd834a0324914')
+  .then((data)=>{res.json(data)})
+  .catch((error)=>{res.json(error)}) 
+})
 module.exports = router
